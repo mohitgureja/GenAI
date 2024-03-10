@@ -16,13 +16,14 @@ load_dotenv()
 
 # Streamlit code
 st.title("LangChain")
-input_text = st.text_input("Enter the query to the thesis document")
+input_text = st.text_input("Enter the query for the provided document")
 
 # LangChain code
 embeddings = OpenAIEmbeddings()
 
 # Load the documents
-loader = PyPDFLoader("examples/Automatic_Generation_of_a_Custom_Corpora_for_Invoice_Analysis_and_Recognition.pdf")
+loader = PyPDFLoader(
+    "examples_data/Automatic_Generation_of_a_Custom_Corpora_for_Invoice_Analysis_and_Recognition.pdf")
 pages = loader.load()
 
 # Load the vectorstore
